@@ -3,13 +3,6 @@ import styled from "styled-components";
 
 import Produto from "../Main/Produto";
 
-import produto1 from "../../img/1.png";
-import produto2 from "../../img/2.png";
-import produto3 from "../../img/3.png";
-import produto4 from "../../img/4.png";
-import produto5 from "../../img/5.png";
-import produto6 from "../../img/6.png";
-
 const Titulo = styled.h2`
     font-size: 2rem;
 `;
@@ -41,6 +34,23 @@ const Produtos = styled.div`
 `;
 
 function Main(props) {
+
+    const listaProdutos = props.bandoDeDados.map((item,index) =>{
+        return (
+        <Produto key={index}
+            id = {item.id}
+            fotoProduto= {item.fotoProduto}
+            descricaoProduto = {item.descricaoProduto}
+            nomeProduto = {item.nomeProduto}
+            precoProduto = {item.precoProduto}
+            botaoProduto = {item.botaoProduto}
+        > </Produto>
+        )
+
+
+    })
+
+
     return (
         <main>
             <Titulo>{props.titulo}</Titulo>
@@ -58,67 +68,10 @@ function Main(props) {
                 </SelecionaOrdemProdutos>
             </MainInformacoes>
 
-            <Produtos>
-                <Item>
-                    <Produto
-                        fotoProduto={produto1}
-                        descricaoProduto="Camiseta preta"
-                        nomeProduto="Camiseta Astronauta"
-                        precoProduto="R$ 99,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-
-                <Item>
-                    <Produto
-                        fotoProduto={produto2}
-                        descricaoProduto="Camiseta amarela"
-                        nomeProduto="Camiseta O Dia e A Hora"
-                        precoProduto="R$ 79,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-
-                <Item>
-                    <Produto
-                        fotoProduto={produto3}
-                        descricaoProduto="Camiseta azul-marinho"
-                        nomeProduto="Camiseta Espaço"
-                        precoProduto="R$ 69,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-
-                <Item>
-                    <Produto
-                        fotoProduto={produto4}
-                        descricaoProduto="Camiseta preta"
-                        nomeProduto="Camiseta Eu Quero Ir Embora"
-                        precoProduto="R$ 69,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-
-                <Item>
-                    <Produto
-                        fotoProduto={produto5}
-                        descricaoProduto="Camiseta azul-estonada"
-                        nomeProduto="Camiseta Mae Jemison"
-                        precoProduto="R$ 89,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-
-                <Item>
-                    <Produto
-                        fotoProduto={produto6}
-                        descricaoProduto="Camiseta cinza-estonada"
-                        nomeProduto="Camiseta Abdução"
-                        precoProduto="R$ 99,90"
-                        botaoProduto="Adicionar ao carrinho"
-                    />
-                </Item>
-            </Produtos>
+             <Produtos>
+                {listaProdutos}
+             </Produtos>
+               
         </main>
     );
 }

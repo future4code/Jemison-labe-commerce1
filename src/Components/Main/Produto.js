@@ -48,7 +48,8 @@ function Produto(props) {
         <ProdutoItem>
             <ProdutoImagem
                 src={props.fotoProduto}
-                alt={props.descricaoProduto}
+                alt={"foto usuario"}
+            
             />
 
             <ProdutoDescricao>
