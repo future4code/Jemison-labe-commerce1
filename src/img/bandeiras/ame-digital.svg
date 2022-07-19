@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="70" height="19" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+  <defs/>
+  <g id="Camada_x0020_1">
+    <g id="_2897154944480">
+      <path id="path6" class="fil0" d="M35 4c-3 0-4 1-5 3v1h3l1-1h2l1 1v1h-4c-2 0-4 2-4 4 0 3 2 4 6 4s5-1 5-3V8c0-1 0-4-5-4zm2 10l-1 1h-3l-1-2 2-1h3v2z"/>
+      <path id="path8" class="fil0" d="M64 17c3 0 5 0 6-3l-3-1v1l-1 1h-3l-1-1v-2h4c2 0 4-1 4-4 0-2-1-4-6-4-3 0-5 2-5 4v6c0 1 1 3 5 3zm-2-9l1-1h3l1 1-1 2h-4V8z"/>
+      <path id="path10" class="fil0" d="M50 11c2 0 4-2 4-3v9h3V7c0-2-1-3-2-3l-3 2-2 3-3-3c0-1-1-2-3-2-1 0-2 1-2 3v10h3V8h1c0 1 2 3 4 3z"/>
+      <path id="path12" d="M13 20l2-1L25 8l1-1-1-2-4-4H5L1 5 0 7l1 1 10 11 2 1z" fill="#ef3666" fill-rule="nonzero"/>
+      <path id="path14" class="fil0" d="M6 1h1l5 4v1h1l1-1 5-4h1z"/>
+    </g>
+  </g>
+</svg>

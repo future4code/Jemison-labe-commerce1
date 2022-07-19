@@ -29,6 +29,11 @@ const SelecionaOrdemProdutos = styled.select`
     border: none;
 `;
 
+const Item = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 const Produtos = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 250px);
@@ -54,48 +59,65 @@ function Main(props) {
             </MainInformacoes>
 
             <Produtos>
-                <Produto
-                    fotoProduto={produto1}
-                    descricaoProduto="Camiseta preta"
-                    nomeProduto="Camiseta Astronauta"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
-                <Produto
-                    fotoProduto={produto2}
-                    descricaoProduto="Camiseta amarela"
-                    nomeProduto="Camiseta O Dia e A Hora"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
-                <Produto
-                    fotoProduto={produto3}
-                    descricaoProduto="Camiseta azul-marinho"
-                    nomeProduto="Camiseta Espaço"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
-                <Produto
-                    fotoProduto={produto4}
-                    descricaoProduto="Camiseta preta"
-                    nomeProduto="Camiseta Eu Quero Ir Embora"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
-                <Produto
-                    fotoProduto={produto5}
-                    descricaoProduto="Camiseta azul-estonada"
-                    nomeProduto="Camiseta Mae Jemison"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
-                <Produto
-                    fotoProduto={produto6}
-                    descricaoProduto="Camiseta cinza-estonada"
-                    nomeProduto="Camiseta Abdução"
-                    precoProduto="R$ 89,90"
-                    botaoProduto="Adicionar ao carrinho"
-                />
+                <Item>
+                    <Produto
+                        fotoProduto={produto1}
+                        descricaoProduto="Camiseta preta"
+                        nomeProduto="Camiseta Astronauta"
+                        precoProduto="R$ 99,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
+
+                <Item>
+                    <Produto
+                        fotoProduto={produto2}
+                        descricaoProduto="Camiseta amarela"
+                        nomeProduto="Camiseta O Dia e A Hora"
+                        precoProduto="R$ 79,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
+
+                <Item>
+                    <Produto
+                        fotoProduto={produto3}
+                        descricaoProduto="Camiseta azul-marinho"
+                        nomeProduto="Camiseta Espaço"
+                        precoProduto="R$ 69,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
+
+                <Item>
+                    <Produto
+                        fotoProduto={produto4}
+                        descricaoProduto="Camiseta preta"
+                        nomeProduto="Camiseta Eu Quero Ir Embora"
+                        precoProduto="R$ 69,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
+
+                <Item>
+                    <Produto
+                        fotoProduto={produto5}
+                        descricaoProduto="Camiseta azul-estonada"
+                        nomeProduto="Camiseta Mae Jemison"
+                        precoProduto="R$ 89,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
+
+                <Item>
+                    <Produto
+                        fotoProduto={produto6}
+                        descricaoProduto="Camiseta cinza-estonada"
+                        nomeProduto="Camiseta Abdução"
+                        precoProduto="R$ 99,90"
+                        botaoProduto="Adicionar ao carrinho"
+                    />
+                </Item>
             </Produtos>
         </main>
     );
