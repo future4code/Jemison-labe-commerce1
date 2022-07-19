@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
+import {bancoDeDadosList} from "./data/bancoDeDados"
 
 import Header from "./Components/Header/Header";
 import Filtros from "./Components/Filtros/Filtros";
 import Main from "./Components/Main/Main";
 import Carrinho from "./Components/Carrinho/Carrinho";
 import Footer from "./Components/Footer/Footer";
+
+
 
 const Conteudo = styled.main`
     display: flex;
@@ -19,14 +22,29 @@ const Conteudo = styled.main`
 `;
 
 function App() {
+    const [bandoDeDadosInicial, setBandoDeDadosInicial] = useState (bancoDeDadosList)
+
+
     return (
         <div>
             <Header />
 
             <Conteudo>
-                <Filtros titulo="Filtrar por" />
-                <Main titulo="Camisetas Espaciais" />
-                <Carrinho titulo="Carrinho" />
+                <Filtros 
+                    titulo="Filtrar por"
+                    // bandoDeDados ={bandoDeDadosInicial}
+                />
+
+                <Main 
+                    titulo="Camisetas Espaciais" 
+                    bandoDeDados ={bandoDeDadosInicial}
+                />
+
+
+                <Carrinho
+                     titulo="Carrinho"
+                    //  bandoDeDados ={bandoDeDadosInicial}
+                />
             </Conteudo>
 
             <Footer />
