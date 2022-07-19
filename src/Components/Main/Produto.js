@@ -15,11 +15,8 @@ const ProdutoImagem = styled.img`
 `;
 
 const ProdutoDescricao = styled.div`
-    padding: 16px 24px 24px;
-`;
-
-const ProdutoInformacoes = styled.div`
-    margin-bottom: 10px;
+    padding: 16px 24px 6px 24px;
+    transition: 0.5s;
 
     & :nth-child(1) {
         font-size: 0.875rem;
@@ -30,6 +27,7 @@ const ProdutoInformacoes = styled.div`
         color: #00acb7;
         font-size: 1.25rem;
         font-weight: 600;
+        margin-bottom: 10px;
     }
 `;
 
@@ -42,6 +40,7 @@ const ProdutoBotao = styled.button`
     border-radius: 30px;
     font-weight: 600;
     text-transform: uppercase;
+    margin-bottom: 16px;
 `;
 
 function Produto(props) {
@@ -53,13 +52,11 @@ function Produto(props) {
             />
 
             <ProdutoDescricao>
-                <ProdutoInformacoes>
-                    <p className="Link">{props.nomeProduto}</p>
-                    <p>{props.precoProduto}</p>
-                </ProdutoInformacoes>
-
-                <ProdutoBotao>{props.botaoProduto}</ProdutoBotao>
+                <p className="Link">{props.nomeProduto}</p>
+                <p>{props.precoProduto}</p>
             </ProdutoDescricao>
+
+            <ProdutoBotao>{props.botaoProduto}</ProdutoBotao>
         </ProdutoItem>
     );
 }
