@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Formulario = styled.aside`
@@ -11,6 +11,7 @@ const Formulario = styled.aside`
 `;
 
 function Filtros(props) {
+    
     return (
         <Formulario>
             <h2>{props.titulo}</h2>
@@ -21,6 +22,8 @@ function Filtros(props) {
                 name="valor-minimo"
                 id="valor-minimo"
                 placeholder="Digite um valor mínimo"
+                value={props.minValor}
+                onChange={(e)=>{props.setMinValor(e.target.value)}}
             />
 
             <label>Valor máximo</label>
@@ -29,6 +32,8 @@ function Filtros(props) {
                 name="valor-maximo"
                 id="valor-maximo"
                 placeholder="Digite um valor máximo"
+                value={props.maxValor}
+                onChange={(e)=>{props.setMaxValor(e.target.value)}}
             />
 
             <label>Busca por nome</label>
@@ -37,9 +42,9 @@ function Filtros(props) {
                 name="busca-nome"
                 id="busca-nome"
                 placeholder="Digite o nome do produto"
+                value={props.pesquisa}
+                onChange={(e)=>{props.setPesquisa(e.target.value)}}
             />
-
-            <button>Pesquisar produto</button>
         </Formulario>
     );
 }

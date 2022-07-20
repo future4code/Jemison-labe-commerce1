@@ -9,7 +9,7 @@ import produto6 from "../img/6.png";
 
 export const bancoDeDadosList=[
     {
-        id: "1",
+        id: 1,
         fotoProduto:produto1,
         descricaoProduto:"Camiseta preta",
         nomeProduto:"Camiseta Astronauta",
