@@ -4,14 +4,12 @@ import "./App.css";
 import {bancoDeDadosList} from "./data/bancoDeDados"
 
 import Header from "./Components/Header/Header";
-import Filtros from "./Components/Filtros/Filtros";
 import Main from "./Components/Main/Main";
-import Carrinho from "./Components/Carrinho/Carrinho";
 import Footer from "./Components/Footer/Footer";
 
 
 
-const Conteudo = styled.main`
+export const Conteudo = styled.main`
     display: flex;
     justify-content: space-around;
     gap: 20px;
@@ -22,28 +20,15 @@ const Conteudo = styled.main`
 `;
 
 function App() {
-    const [bandoDeDadosInicial, setBandoDeDadosInicial] = useState (bancoDeDadosList)
 
-
+    
     return (
         <div>
             <Header />
 
             <Conteudo>
-                <Filtros 
-                    titulo="Filtrar por"
-                    // bandoDeDados ={bandoDeDadosInicial}
-                />
-
                 <Main 
-                    titulo="Camisetas Espaciais" 
-                    bandoDeDados ={bandoDeDadosInicial}
-                />
-
-
-                <Carrinho
-                     titulo="Carrinho"
-                    //  bandoDeDados ={bandoDeDadosInicial}
+                    titulo="Camisetas Espaciais"
                 />
             </Conteudo>
 
