@@ -43,21 +43,24 @@ function Main(props) {
   const [maxValor, setMaxValor] = useState("");
   const [pesquisa, setPesquisa] = useState("");
 
-  // const HandleMinValor = (e) => {
-  //     setMinValor(e.target.value)
-  // }
+  const HandleMinValor = (e) => {
+      setMinValor(e.target.value)
+  }
 
-  // const HandleMaxValor = (e) => {
-  //     setMaxValor(e.target.value)
-  // }
+  const HandleMaxValor = (e) => {
+      setMaxValor(e.target.value)
+  }
 
-  // const HandlePesquisa = (e) => {
-  //     setPesquisa(e.target.value)
-  // }
+  const HandlePesquisa = (e) => {
+      setPesquisa(e.target.value)
+  }
 
   return (
     <Conteudo>
-      <Filtros />
+      <Filtros 
+        pesquisa={pesquisa}
+        setPesquisa={setPesquisa}
+      />
       <main>
         <Titulo>{props.titulo}</Titulo>
 
@@ -75,10 +78,14 @@ function Main(props) {
         </MainInformacoes>
 
         <Produtos>
-            {bancoDeDadosList.map((bandoDeDadosInicial, index) => {
+            {bancoDeDadosList
+            .filter((bandoDeDadosInicial) =>{
+                return bandoDeDadosInicial.nomeProduto.toLowerCase().includes(pesquisa.toLowerCase())
+            })
+            .map((bandoDeDadosInicial) => {
                 return (
                     <Produto
-                    key={index}
+                    key={bandoDeDadosInicial}
                     id={bandoDeDadosInicial.id}
                     fotoProduto={bandoDeDadosInicial.fotoProduto}
                     descricaoProduto={bandoDeDadosInicial.descricaoProduto}
