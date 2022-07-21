@@ -39,9 +39,12 @@ const Produtos = styled.div`
 
 function Main(props) {
   //Filtros
-  const [minValor, setMinValor] = useState("");
-  const [maxValor, setMaxValor] = useState("");
+  const [minValor, setMinValor] = useState(-Infinity);
+  const [maxValor, setMaxValor] = useState(Infinity);
   const [pesquisa, setPesquisa] = useState("");
+
+  //Ponto de otimização
+  const lowerPesquisa = pesquisa.toLowerCase();
 
   const HandleMinValor = (e) => {
       setMinValor(e.target.value)
@@ -59,7 +62,12 @@ function Main(props) {
     <Conteudo>
       <Filtros 
         pesquisa={pesquisa}
+        minValor={minValor}
+        maxValor={maxValor}
         setPesquisa={setPesquisa}
+        setMinValor={setMinValor}
+        setMaxValor={setMaxValor}
+        
       />
       <main>
         <Titulo>{props.titulo}</Titulo>
@@ -79,8 +87,14 @@ function Main(props) {
 
         <Produtos>
             {bancoDeDadosList
-            .filter((bandoDeDadosInicial) =>{
-                return bandoDeDadosInicial.nomeProduto.toLowerCase().includes(pesquisa.toLowerCase())
+            .filter((bandoDeDadosInicial) => { //lowerPesquisa - utilizado para otimizar o código
+                return bandoDeDadosInicial.nomeProduto.toLowerCase().includes(lowerPesquisa) || bandoDeDadosInicial.descricaoProduto.toLowerCase().includes(lowerPesquisa)
+            })
+            .filter((bandoDeDadosInicial) => {
+                return bandoDeDadosInicial.precoProduto >= minValor || minValor === ""
+            })
+            .filter((bandoDeDadosInicial) => {
+                return bandoDeDadosInicial.precoProduto <= maxValor || maxValor === ""
             })
             .map((bandoDeDadosInicial) => {
                 return (
@@ -90,7 +104,7 @@ function Main(props) {
                     fotoProduto={bandoDeDadosInicial.fotoProduto}
                     descricaoProduto={bandoDeDadosInicial.descricaoProduto}
                     nomeProduto={bandoDeDadosInicial.nomeProduto}
-                    precoProduto={bandoDeDadosInicial.precoProduto}
+                    precoProduto={`R$ ${bandoDeDadosInicial.precoProduto}`}
                     botaoProduto={bandoDeDadosInicial.botaoProduto}
                 >
                     {" "}
