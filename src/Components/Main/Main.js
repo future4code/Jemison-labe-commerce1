@@ -44,13 +44,13 @@ function Main(props) {
   const [maxValor, setMaxValor] = useState(Infinity);
   const [pesquisa, setPesquisa] = useState("");
   const [ordemCrescent, setOrdemCrescent] = useState("descrecente")
-  const [carrinho,setCarrinho] = useState([])
+  const [cardcarrinho,setCardCarrinho] = useState([])
   
   //Logica do Carrinho
   //{id: 1, qtd: 1}
   
    const addProduto = (id) => {
-        const copyCarrinho = [...carrinho];
+        const copyCarrinho = [...cardcarrinho];
 
         const item = copyCarrinho.find((produto) => produto.id === id);
 
@@ -59,21 +59,21 @@ function Main(props) {
         } else{
           item.qtd = item.qtd + 1
         }
-        setCarrinho(copyCarrinho)
+        setCardCarrinho(copyCarrinho)
     } 
 
     const removerProduto = (id) => {
-      const copyCarrinho = [...carrinho];
+      const copyCarrinho = [...cardcarrinho];
 
       const item = copyCarrinho.find((produto) => produto.id === id);
 
       if (item && item.qtd > 1) {
         item.qtd = item.qtd -1
 
-        setCarrinho(copyCarrinho)
+        setCardCarrinho(copyCarrinho)
       }else {
         const listaFiltrada = copyCarrinho.filter((produto) => produto.id !== id)
-        setCarrinho(listaFiltrada)
+        setCardCarrinho(listaFiltrada)
       }
     } 
 
@@ -156,7 +156,7 @@ function Main(props) {
         </Produtos>
       </main>
       <Carrinho 
-        carrinho = {carrinho}
+          Cardcarrinho = {cardcarrinho}
         
       />
     </Conteudo>

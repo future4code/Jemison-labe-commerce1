@@ -9,24 +9,14 @@ const Checkout = styled.aside`
 `;
 
 function Carrinho(props) {
-    const [carrinho] = useState(props)
-
-
-    const listaCarrinho = props.carrinho.map((e) => {
-        return (
-            <div>
-                <p> {e.qtd}</p>
-
-            </div>
-        )
-    })
+    
 
 
     
     return (
         <Checkout>
             <div>
-                {listaCarrinho}
+                
 
             </div>
         </Checkout>
