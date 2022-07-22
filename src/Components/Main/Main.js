@@ -79,7 +79,7 @@ const Item = styled.div`
 
 const Produtos = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 250px);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 `;
 
@@ -152,7 +152,9 @@ function Main(props) {
                   .sort((maior, menor) => {
                     if (ordemCrescent === "descrecente"){
                       return (maior.precoProduto - menor.precoProduto)
-                    } else {}
+                    } else {
+                      return (menor.precoProduto - maior.precoProduto)
+                    }
                       
                   })
 
@@ -163,9 +165,11 @@ function Main(props) {
                               id={bandoDeDadosInicial.id}
                               fotoProduto={bandoDeDadosInicial.fotoProduto}
                               descricaoProduto={bandoDeDadosInicial.descricaoProduto}
-                              nomeProduto={bandoDeDadosInicial.nomeProduto}
-                              precoProduto={`R$ ${bandoDeDadosInicial.precoProduto}`} >
-                          
+                              nomeProduto={bandoDeDadosInicial.nomeProduto} 
+                              precoProduto={bandoDeDadosInicial.precoProduto
+                                .toString()
+                                .replace(".", ",")} 
+                                 >
                              </Produto>
                 )
             })

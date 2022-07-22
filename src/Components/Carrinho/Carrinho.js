@@ -16,7 +16,13 @@ function Carrinho(props) {
     return (
         <Checkout>
             <div>
-               
+            <h2>Carrinho</h2>
+            <div>
+                <p>1x</p>
+                <p>Produto 4</p>
+                <button>Remover</button>
+            </div>
+            <p>Valor total:</p>
                 
             </div>
         </Checkout>

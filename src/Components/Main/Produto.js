@@ -47,7 +47,7 @@ function Produto(props) {
    
     return (
         <ProdutoItem>
-            <ProdutoImagem
+             <ProdutoImagem
                 src={props.fotoProduto}
                 alt={"foto produto"}
             
@@ -55,10 +55,10 @@ function Produto(props) {
 
             <ProdutoDescricao>
                 <p className="Link">{props.nomeProduto}</p>
-                <p>{props.precoProduto}</p>
+                <p>R$ {props.precoProduto}</p>
             </ProdutoDescricao>
 
-            <ProdutoBotao>Adicionar</ProdutoBotao>
+            <ProdutoBotao>Adicionar</ProdutoBotao> 
         </ProdutoItem>
     );
 }
