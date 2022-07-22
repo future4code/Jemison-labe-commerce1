@@ -7,6 +7,52 @@ import {bancoDeDadosList} from "../../data/bancoDeDados"
 
 import Produto from "../Main/Produto";
 
+//teste
+const ProdutoItem = styled.div`
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+background-color: #ffffff;
+`;
+
+const ProdutoImagem = styled.img`
+max-height: 250px;
+border-bottom: 1px solid #c9c9c9;
+border-radius: 10px 10px 0 0;
+`;
+
+const ProdutoDescricao = styled.div`
+padding: 16px 24px 6px 24px;
+transition: 0.5s;
+
+& :nth-child(1) {
+    font-size: 0.875rem;
+    margin-bottom: 6px;
+}
+
+& :nth-child(2) {
+    color: #00acb7;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+`;
+
+const ProdutoBotao = styled.button`
+align-self: center;
+color: #ffffff;
+background-color: #00acb7;
+padding: 10px 20px;
+border: none;
+border-radius: 30px;
+font-weight: 600;
+text-transform: uppercase;
+margin-bottom: 16px;
+`;
+
+
+//test
+
 const Titulo = styled.h2`
   font-size: 2rem;
 `;
@@ -46,36 +92,11 @@ function Main(props) {
   const [ordemCrescent, setOrdemCrescent] = useState("descrecente")
   const [cardcarrinho,setCardCarrinho] = useState([])
   
-  //Logica do Carrinho
-  //{id: 1, qtd: 1}
+  //Função Add Item
+
   
-   const addProduto = (id) => {
-        const copyCarrinho = [...cardcarrinho];
 
-        const item = copyCarrinho.find((produto) => produto.id === id);
-
-        if(!item){
-          copyCarrinho.push({id: id, qtd: 1})
-        } else{
-          item.qtd = item.qtd + 1
-        }
-        setCardCarrinho(copyCarrinho)
-    } 
-
-    const removerProduto = (id) => {
-      const copyCarrinho = [...cardcarrinho];
-
-      const item = copyCarrinho.find((produto) => produto.id === id);
-
-      if (item && item.qtd > 1) {
-        item.qtd = item.qtd -1
-
-        setCardCarrinho(copyCarrinho)
-      }else {
-        const listaFiltrada = copyCarrinho.filter((produto) => produto.id !== id)
-        setCardCarrinho(listaFiltrada)
-      }
-    } 
+    
 
 
 
@@ -138,27 +159,21 @@ function Main(props) {
                     .map((bandoDeDadosInicial) => {
                         return (
                             <Produto
-                            key={bandoDeDadosInicial}
-                            id={bandoDeDadosInicial.id}
-                            fotoProduto={bandoDeDadosInicial.fotoProduto}
-                            descricaoProduto={bandoDeDadosInicial.descricaoProduto}
-                            nomeProduto={bandoDeDadosInicial.nomeProduto}
-                            precoProduto={`R$ ${bandoDeDadosInicial.precoProduto}`}
-                            
-                            
-                        >
-                         
-                </Produto>
+                              key={bandoDeDadosInicial}
+                              id={bandoDeDadosInicial.id}
+                              fotoProduto={bandoDeDadosInicial.fotoProduto}
+                              descricaoProduto={bandoDeDadosInicial.descricaoProduto}
+                              nomeProduto={bandoDeDadosInicial.nomeProduto}
+                              precoProduto={`R$ ${bandoDeDadosInicial.precoProduto}`} >
+                          
+                             </Produto>
                 )
             })
 
             }
         </Produtos>
       </main>
-      <Carrinho 
-          Cardcarrinho = {cardcarrinho}
-        
-      />
+      <Carrinho />
     </Conteudo>
   );
 }

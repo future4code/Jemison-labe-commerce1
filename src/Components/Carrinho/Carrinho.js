@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {bancoDeDadosList} from "../../data/bancoDeDados"
+
 
 const Checkout = styled.aside`
     padding: 20px;
@@ -9,15 +9,15 @@ const Checkout = styled.aside`
 `;
 
 function Carrinho(props) {
-    
+
 
 
     
     return (
         <Checkout>
             <div>
+               
                 
-
             </div>
         </Checkout>
     );

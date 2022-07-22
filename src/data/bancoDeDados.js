@@ -23,7 +23,6 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta amarela",
         nomeProduto:"Camiseta O Dia e A Hora",
         precoProduto: 79.99,
-        
       },
 
       {
