@@ -39,15 +39,43 @@ const Produtos = styled.div`
 
 function Main(props) {
   //Filtros
-  const [produtos] = bancoDeDadosList;
+  const [produtos] = [bancoDeDadosList]
   const [minValor, setMinValor] = useState(-Infinity);
   const [maxValor, setMaxValor] = useState(Infinity);
   const [pesquisa, setPesquisa] = useState("");
   const [ordemCrescent, setOrdemCrescent] = useState("descrecente")
   const [carrinho,setCarrinho] = useState([])
+  
   //Logica do Carrinho
+  //{id: 1, qtd: 1}
   
-  
+   const addProduto = (id) => {
+        const copyCarrinho = [...carrinho];
+
+        const item = copyCarrinho.find((produto) => produto.id === id);
+
+        if(!item){
+          copyCarrinho.push({id: id, qtd: 1})
+        } else{
+          item.qtd = item.qtd + 1
+        }
+        setCarrinho(copyCarrinho)
+    } 
+
+    const removerProduto = (id) => {
+      const copyCarrinho = [...carrinho];
+
+      const item = copyCarrinho.find((produto) => produto.id === id);
+
+      if (item && item.qtd > 1) {
+        item.qtd = item.qtd -1
+
+        setCarrinho(copyCarrinho)
+      }else {
+        const listaFiltrada = copyCarrinho.filter((produto) => produto.id !== id)
+        setCarrinho(listaFiltrada)
+      }
+    } 
 
 
 
@@ -128,8 +156,8 @@ function Main(props) {
         </Produtos>
       </main>
       <Carrinho 
+        carrinho = {carrinho}
         
-          
       />
     </Conteudo>
   );

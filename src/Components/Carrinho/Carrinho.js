@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import {bancoDeDadosList} from "../../data/bancoDeDados"
 
 const Checkout = styled.aside`
     padding: 20px;
@@ -8,20 +9,26 @@ const Checkout = styled.aside`
 `;
 
 function Carrinho(props) {
+    const [carrinho] = useState(props)
 
+
+    const listaCarrinho = props.carrinho.map((e) => {
+        return (
+            <div>
+                <p> {e.qtd}</p>
+
+            </div>
+        )
+    })
 
 
     
     return (
         <Checkout>
-            <h2>{props.titulo}</h2>
             <div>
-                <p>1x</p>
-                <p>Produto 4</p>
-                <button>Remover</button>
-            </div>
+                {listaCarrinho}
 
-            <p>Valor total: R$10,00</p>
+            </div>
         </Checkout>
     );
 }
