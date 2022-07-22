@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+
 
 const Checkout = styled.aside`
     padding: 20px;
@@ -8,16 +9,22 @@ const Checkout = styled.aside`
 `;
 
 function Carrinho(props) {
+
+
+
+    
     return (
         <Checkout>
-            <h2>{props.titulo}</h2>
+            <div>
+            <h2>Carrinho</h2>
             <div>
                 <p>1x</p>
                 <p>Produto 4</p>
                 <button>Remover</button>
             </div>
-
-            <p>Valor total: R$10,00</p>
+            <p>Valor total:</p>
+                
+            </div>
         </Checkout>
     );
 }

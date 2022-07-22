@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const ProdutoItem = styled.div`
@@ -44,20 +44,21 @@ const ProdutoBotao = styled.button`
 `;
 
 function Produto(props) {
+   
     return (
         <ProdutoItem>
-            <ProdutoImagem
+             <ProdutoImagem
                 src={props.fotoProduto}
-                alt={"foto usuario"}
+                alt={"foto produto"}
             
             />
 
             <ProdutoDescricao>
                 <p className="Link">{props.nomeProduto}</p>
-                <p>{props.precoProduto}</p>
+                <p>R$ {props.precoProduto}</p>
             </ProdutoDescricao>
 
-            <ProdutoBotao>{props.botaoProduto}</ProdutoBotao>
+            <ProdutoBotao>Adicionar</ProdutoBotao> 
         </ProdutoItem>
     );
 }
