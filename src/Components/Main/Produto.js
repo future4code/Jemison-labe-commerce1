@@ -44,6 +44,7 @@ const ProdutoBotao = styled.button`
 `;
 
 function Produto(props) {
+   
     return (
         <ProdutoItem>
             <ProdutoImagem
@@ -57,7 +58,7 @@ function Produto(props) {
                 <p>{props.precoProduto}</p>
             </ProdutoDescricao>
 
-            <ProdutoBotao>{props.botaoProduto}</ProdutoBotao>
+            <ProdutoBotao>Adicionar</ProdutoBotao>
         </ProdutoItem>
     );
 }
