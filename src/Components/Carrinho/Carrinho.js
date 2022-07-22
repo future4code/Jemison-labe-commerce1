@@ -9,9 +9,9 @@ const Checkout = styled.aside`
 
 function Carrinho(props) {
 
+
+
     
-
-
     return (
         <Checkout>
             <h2>{props.titulo}</h2>

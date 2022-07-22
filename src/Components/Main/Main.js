@@ -39,12 +39,12 @@ const Produtos = styled.div`
 
 function Main(props) {
   //Filtros
-  
+  const [produtos] = bancoDeDadosList;
   const [minValor, setMinValor] = useState(-Infinity);
   const [maxValor, setMaxValor] = useState(Infinity);
   const [pesquisa, setPesquisa] = useState("");
   const [ordemCrescent, setOrdemCrescent] = useState("descrecente")
-
+  const [carrinho,setCarrinho] = useState([])
   //Logica do Carrinho
   
   
@@ -54,17 +54,7 @@ function Main(props) {
   //Ponto de otimização
   const lowerPesquisa = pesquisa.toLowerCase();
 
-  const HandleMinValor = (e) => {
-      setMinValor(e.target.value)
-  }
-
-  const HandleMaxValor = (e) => {
-      setMaxValor(e.target.value)
-  }
-
-  const HandlePesquisa = (e) => {
-      setPesquisa(e.target.value)
-  }
+  
 
   return (
     <Conteudo>
@@ -109,14 +99,13 @@ function Main(props) {
                       return bandoDeDadosInicial.precoProduto <= maxValor  || maxValor === ""
                   }) 
 
+                  //Ordena  os produtos, por fileira, do maior pra o menor ou menor para mairo
                   .sort((maior, menor) => {
                     if (ordemCrescent === "descrecente"){
                       return (maior.precoProduto - menor.precoProduto)
                     } else {}
                       
-                    
                   })
-
 
                     .map((bandoDeDadosInicial) => {
                         return (
@@ -140,9 +129,7 @@ function Main(props) {
       </main>
       <Carrinho 
         
-
-      
-      
+          
       />
     </Conteudo>
   );
