@@ -44,27 +44,16 @@ const ProdutoBotao = styled.button`
 `;
 
 function Produto(props) {
-   
-
-
-
-
-
-
     return (
         <ProdutoItem>
-             <ProdutoImagem
-                src={props.fotoProduto}
-                alt={"foto produto"}
-            
-            />
+            <ProdutoImagem src={props.fotoProduto} alt={"foto produto"} />
 
             <ProdutoDescricao>
                 <p className="Link">{props.nomeProduto}</p>
                 <p>R$ {props.precoProduto}</p>
             </ProdutoDescricao>
 
-            <ProdutoBotao>Adicionar</ProdutoBotao>  
+            <ProdutoBotao>Adicionar</ProdutoBotao>
         </ProdutoItem>
     );
 }
