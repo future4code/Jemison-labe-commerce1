@@ -1,6 +1,6 @@
 # LABECOMMERCE
 
-E-commerce de camisetas com estampas divertidas relacionadas ao espaço.
+E-commerce de camisetas com estampas divertidas relacionadas ao espaço
 
 ## Imagens do projeto
 
