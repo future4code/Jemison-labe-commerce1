@@ -7,51 +7,6 @@ import {bancoDeDadosList} from "../../data/bancoDeDados"
 
 import Produto from "../Main/Produto";
 
-//teste
-const ProdutoItem = styled.div`
-display: flex;
-flex-direction: column;
-border-radius: 10px;
-background-color: #ffffff;
-`;
-
-const ProdutoImagem = styled.img`
-max-height: 250px;
-border-bottom: 1px solid #c9c9c9;
-border-radius: 10px 10px 0 0;
-`;
-
-const ProdutoDescricao = styled.div`
-padding: 16px 24px 6px 24px;
-transition: 0.5s;
-
-& :nth-child(1) {
-    font-size: 0.875rem;
-    margin-bottom: 6px;
-}
-
-& :nth-child(2) {
-    color: #00acb7;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-`;
-
-const ProdutoBotao = styled.button`
-align-self: center;
-color: #ffffff;
-background-color: #00acb7;
-padding: 10px 20px;
-border: none;
-border-radius: 30px;
-font-weight: 600;
-text-transform: uppercase;
-margin-bottom: 16px;
-`;
-
-
-//test
 
 const Titulo = styled.h2`
   font-size: 2rem;
@@ -85,12 +40,12 @@ const Produtos = styled.div`
 
 function Main(props) {
   //Filtros
-  const [produtos] = [bancoDeDadosList]
+  
   const [minValor, setMinValor] = useState(-Infinity);
   const [maxValor, setMaxValor] = useState(Infinity);
   const [pesquisa, setPesquisa] = useState("");
   const [ordemCrescent, setOrdemCrescent] = useState("descrecente")
-  const [cardcarrinho,setCardCarrinho] = useState([])
+  
   
   //Função Add Item
 
@@ -120,7 +75,7 @@ function Main(props) {
         <Titulo>{props.titulo}</Titulo>
 
         <MainInformacoes>
-          <p>Exibindo 1–6 de 6 resultados</p>
+          <p>Exibindo resultados</p>
 
           <SelecionaOrdemProdutos
             value={ordemCrescent}
@@ -151,9 +106,9 @@ function Main(props) {
                   //Ordena  os produtos, por fileira, do maior pra o menor ou menor para mairo
                   .sort((maior, menor) => {
                     if (ordemCrescent === "descrecente"){
-                      return (maior.precoProduto - menor.precoProduto)
+                      return (maior.precoProduto - menor.precoProduto )
                     } else {
-                      return (menor.precoProduto - maior.precoProduto)
+                       return (menor.precoProduto - maior.precoProduto)
                     }
                       
                   })
@@ -170,6 +125,7 @@ function Main(props) {
                                 .toString()
                                 .replace(".", ",")} 
                                  >
+                               
                              </Produto>
                 )
             })
