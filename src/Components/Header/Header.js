@@ -43,8 +43,12 @@ const HeaderTopNav = styled.nav`
     gap: 33px;
 `;
 
-const HeaderTopNavItem = styled.a`
+const HeaderTopNavItem = styled.div`
     position: relative;
+
+    li{
+        color: black;
+    }
 
     &::before {
         display: inline-block;
