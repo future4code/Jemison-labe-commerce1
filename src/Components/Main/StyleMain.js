@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const MainPrincipal = styled.div `
-  
+  padding: 10px;
 
 `
 
