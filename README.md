@@ -9,7 +9,7 @@ E-commerce de camisetas com estampas divertidas relacionadas ao espaço
 
 ## Link do projeto
 
-https://labecommerce-jemison.surge.sh/
+https://general-volcano.surge.sh/
 
 ## Referência
 
@@ -40,16 +40,7 @@ https://labecommerce-jemison.surge.sh/
     -   É possível filtrar um produto pelo nome do produto
     -   É possível filtrar um produto com a cor do mesmo. Ex.: Azul, amarelo, etc.
 
-## O que não funciona?
 
-### Carrinho 🛒
-
--   Essa tem sido de longe, a parte mais complexa do projeto. Ainda estamos tentando implementar um carrinho de compras que:
-    -   Mostre dos os produtos que foram comprados
-    -   Mostre a quantidade de cada produto comprado
-    -   Possibilite a remoção do produto
-    -   Mostre o valor total dos produtos corretamente
-    -   Possibilite salvar os valores das compras, mesmo quando recarrega a página
 
 ## Aprendizados
 
