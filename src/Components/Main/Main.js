@@ -1,142 +1,83 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Filtros from "../Filtros/Filtros";
-import Carrinho from "../Carrinho/Carrinho";
-import { Conteudo } from "../../App";
-import { bancoDeDadosList } from "../../data/bancoDeDados";
+import React from "react";
 
-import Produto from "../Main/Produto";
+import {MainPrincipal} from "./StyleMain"
 
-const Titulo = styled.h2`
-    font-size: 2rem;
-`;
 
-const MainInformacoes = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 40px;
-`;
 
-const SelecionaOrdemProdutos = styled.select`
-    color: #757575;
-    font-size: 0.875rem;
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-`;
 
-const Item = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
+import {ConteinerPrincipal, Produto, BotaoCard , NomeProduto,  PrecoProduto, GridProdutos } from './StyleMain'
 
-const Produtos = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-`;
 
-function Main(props) {
-    //Filtros
 
-    const [minValor, setMinValor] = useState(-Infinity);
-    const [maxValor, setMaxValor] = useState(Infinity);
-    const [pesquisa, setPesquisa] = useState("");
-    const [ordemCrescent, setOrdemCrescent] = useState("descrecente");
 
-    //Função Add Item
+export function Main (props) {
 
-    //Ponto de otimização
-    const lowerPesquisa = pesquisa.toLowerCase();
+    const obterListaFiltrada = () => {
+         return props.listaDeProdutos
+
+         .filter((listaDeProdutos) => props.minValor <= listaDeProdutos.precoProduto || props.minValor === "")
+
+         .filter((listaDeProdutos) => props.maxValor >= listaDeProdutos.precoProduto || props.maxValor === "")
+
+         .filter((listaDeProdutos) => listaDeProdutos.nomeProduto.toLowerCase().includes(props.pesquisa.toLowerCase()))
+
+         .filter ((listaDeProdutos) => listaDeProdutos.nomeProduto.toLowerCase().includes(props.pesquisaHeader.toLowerCase()))
+        
+         .sort((maior, menor) => {
+            if(props.ordemCrescent === "descrecente"){
+                return (maior.precoProduto - menor.precoProduto)
+            } else {
+                return (menor.precoProduto - maior.precoProduto)
+            }
+         })
+      };
+
+
+
+     const listaFiltrada = obterListaFiltrada().map((listaDeProdutos) => {
+        return (
+            <Produto>
+                <img src={listaDeProdutos.fotoProduto}></img>
+                <NomeProduto> {listaDeProdutos.nomeProduto}</NomeProduto>
+                <PrecoProduto>{listaDeProdutos.precoProduto}</PrecoProduto>
+                <BotaoCard  onClick={() => props.addItensAoCarrinho(listaDeProdutos.id)}> 
+                    Adcionar ao Carrinho
+                
+                </BotaoCard>
+                
+            </Produto>
+        )
+
+     }) 
+
 
     return (
-        <Conteudo>
-            <Filtros
-                pesquisa={pesquisa}
-                minValor={minValor}
-                maxValor={maxValor}
-                setPesquisa={setPesquisa}
-                setMinValor={setMinValor}
-                setMaxValor={setMaxValor}
-            />
-            <main>
-                <Titulo>{props.titulo}</Titulo>
+        <MainPrincipal>
+            <h1> Camisetas Espacias</h1>
+            <ConteinerPrincipal>
+                <p>Quantidade de produtos: <span>{listaFiltrada.length} </span></p>
 
-                <MainInformacoes>
-                    <p>Exibindo resultados</p>
+                <select 
+                    value={props.ordemCrescent}
+                    onChange = {props.onChangeOrdemCrescent}
+                >
 
-                    <SelecionaOrdemProdutos
-                        value={ordemCrescent}
-                        onChange={(e) => setOrdemCrescent(e.target.value)}>
-                        <option value={"descrecente"} selected>
-                            Ordenar por preço: menor para maior
-                        </option>
-                        <option value={"crescente"}>
-                            Ordenar por preço: maior para menor
-                        </option>
-                    </SelecionaOrdemProdutos>
-                </MainInformacoes>
+                    <option value={"crescente"}> Crescente</option>
+                    <option value={"descrecente"}> Descrescente</option>
 
-                <Produtos>
-                    {bancoDeDadosList
-                        .filter((bandoDeDadosInicial) => {
-                            //lowerPesquisa - utilizado para otimizar o código
-                            return (
-                                bandoDeDadosInicial.nomeProduto
-                                    .toLowerCase()
-                                    .includes(lowerPesquisa) ||
-                                bandoDeDadosInicial.descricaoProduto
-                                    .toLowerCase()
-                                    .includes(lowerPesquisa)
-                            );
-                        })
-                        .filter((bandoDeDadosInicial) => {
-                            return (
-                                bandoDeDadosInicial.precoProduto >= minValor ||
-                                minValor === ""
-                            );
-                        })
-                        .filter((bandoDeDadosInicial) => {
-                            return (
-                                bandoDeDadosInicial.precoProduto <= maxValor ||
-                                maxValor === ""
-                            );
-                        })
+                </select>
 
-                        //Ordena  os produtos, por fileira, do maior pra o menor ou menor para mairo
-                        .sort((maior, menor) => {
-                            if (ordemCrescent === "descrecente") {
-                                return maior.precoProduto - menor.precoProduto;
-                            } else {
-                                return menor.precoProduto - maior.precoProduto;
-                            }
-                        })
+            </ConteinerPrincipal>
 
-                        .map((bandoDeDadosInicial) => {
-                            return (
-                                <Produto
-                                    key={bandoDeDadosInicial}
-                                    id={bandoDeDadosInicial.id}
-                                    fotoProduto={
-                                        bandoDeDadosInicial.fotoProduto
-                                    }
-                                    descricaoProduto={
-                                        bandoDeDadosInicial.descricaoProduto
-                                    }
-                                    nomeProduto={
-                                        bandoDeDadosInicial.nomeProduto
-                                    }
-                                    precoProduto={bandoDeDadosInicial.precoProduto
-                                        .toString()
-                                        .replace(".", ",")}></Produto>
-                            );
-                        })}
-                </Produtos>
-            </main>
-            <Carrinho />
-        </Conteudo>
-    );
+            <GridProdutos>
+                {listaFiltrada}
+            </GridProdutos>
+
+
+
+
+        </MainPrincipal>
+        
+    )
+
 }
-
-export default Main;

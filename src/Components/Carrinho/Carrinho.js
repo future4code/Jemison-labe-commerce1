@@ -1,26 +1,48 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react"
+import {CarrinhoCard, CarrinhoEstatico, BotaoLimparCarrinho, BotaoRemoverDoCarrinho} from "./StyleCarrinho"
 
-const Checkout = styled.aside`
-    padding: 20px;
-    border: 1px solid #c9c9c9;
-    width: 208px;
-`;
 
-function Carrinho(props) {
+export function Carrinho (props) {
+    const arryCarrinho = props.carrinho.map((e) => {
+
+        return (
+            <CarrinhoCard>
+                <p> <span>{e.quantidadeItens}</span> produto(s) de <span>{e.nomeProduto}</span></p>
+                <p>  Total dos Produtos: <span> {e.quantidadeItens * e.precoProduto} , 00 </span> </p>
+
+                <BotaoRemoverDoCarrinho onClick={() => props.removeItensDoCarrinho(e.id)}> remover do carrinho</BotaoRemoverDoCarrinho>
+
+            </CarrinhoCard>)
+            })
+
+        
+        const somaCarrinho = [0]
+        somaCarrinho.forEach(somaItens)
+
+        function somaItens (item, index, array){
+            
+            for (let i of props.carrinho) {
+                array[index] +=  i.quantidadeItens * i.precoProduto
+            }
+        }
+
+       function limparCarrinho () {
+            return props.setCarrinho([])
+       }
+
+
+
+
     return (
-        <Checkout>
-            <div>
-                <h2>Carrinho</h2>
-                <div>
-                    <p>1x</p>
-                    <p>Produto 4</p>
-                    <button>Remover</button>
-                </div>
-                <p>Valor total:</p>
-            </div>
-        </Checkout>
-    );
-}
+        <CarrinhoEstatico>
+            <h3> Carrinho:</h3>
+            {arryCarrinho}
+            <p> Valor total da Compra: R$ <span>{somaCarrinho}, 00</span></p>
 
-export default Carrinho;
+            <BotaoLimparCarrinho onClick={limparCarrinho}> Limpar Carrinho</BotaoLimparCarrinho>
+
+        </CarrinhoEstatico>
+    )
+
+
+}
