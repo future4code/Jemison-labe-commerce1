@@ -39,7 +39,7 @@ export function Main (props) {
             <Produto>
                 <img src={listaDeProdutos.fotoProduto}></img>
                 <NomeProduto> {listaDeProdutos.nomeProduto}</NomeProduto>
-                <PrecoProduto>{listaDeProdutos.precoProduto}</PrecoProduto>
+                <PrecoProduto> R$ {listaDeProdutos.precoProduto}</PrecoProduto>
                 <BotaoCard  onClick={() => props.addItensAoCarrinho(listaDeProdutos.id)}> 
                     Adcionar ao Carrinho
                 

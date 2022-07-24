@@ -39,7 +39,7 @@ import produto6 from "../img/6.png";
     id: 4,
     fotoProduto:produto4,
     descricaoProduto:"Camiseta preta",
-    nomeProduto:"Camiseta Eu Quero Ir Embora",
+    nomeProduto:"Camiseta Quero Ir Embora",
     precoProduto: 99.99,
     
   },
@@ -62,33 +62,7 @@ import produto6 from "../img/6.png";
     
   },
 
-  {
-    id: 7,
-    fotoProduto:produto1,
-    descricaoProduto:"Camiseta cinza-estonada",
-    nomeProduto:"Camisa Estonada",
-    precoProduto: 4.99,
-    
-  },
-
-  {
-    id: 8,
-    fotoProduto:produto6,
-    descricaoProduto:"Camiseta cinza-estonada",
-    nomeProduto:"Camisa da Jemison",
-    precoProduto: 19.99,
-    
-  },
-
-
-  {
-    id: 9,
-    fotoProduto:produto6,
-    descricaoProduto:"Camiseta cinza-estonada",
-    nomeProduto:"Camiseta Abdução",
-    precoProduto: 29.99,
-    
-  },
+  
 
       
 ]

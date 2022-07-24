@@ -9,14 +9,15 @@ export const MainPrincipal = styled.div `
 
 export const ConteinerPrincipal = styled.header `
     display: flex;
-    gap: 25rem;
+    gap: 28rem;
     border: 1px black;
     justify-content: center;
+    align-items: center;
 
     p{
       margin-top:1rem;
       font-weight: bolder;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
     }
 
     span {
@@ -36,7 +37,7 @@ export const GridProdutos = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 30px;
   
 `
 export const Produto = styled.div`
@@ -71,7 +72,7 @@ export const NomeProduto = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
+  font-size: 1rem;
   font-weight: bold;
   padding: 1%; 
 `
@@ -80,6 +81,6 @@ export const PrecoProduto = styled.div`
   color: #00acb7;
   font-weight: bold;
   padding: 1%;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 `
 

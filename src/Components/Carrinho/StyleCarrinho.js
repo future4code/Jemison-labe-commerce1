@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const CarrinhoCard = styled.div `
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
 
 
 `
@@ -40,16 +40,16 @@ export const BotaoRemoverDoCarrinho = styled.button `
 export const CarrinhoEstatico = styled.div `
      display: flex;
      flex-direction: column;
-     gap: 2rem;
+     gap: 1rem;
     
     h3{
-        font-size: 2rem;
+        font-size: 1.5rem;
 
     }
 
     p{
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     span {
