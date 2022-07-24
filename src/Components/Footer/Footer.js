@@ -194,13 +194,12 @@ function Footer() {
             <FooterBottomBg>
                 <FooterBottom>
                     <p>
-                        © 2022 - Alguns direitos reservados. Conteúdo
-                        fictício.
+                        © 2022 - Alguns direitos reservados. Conteúdo fictício.
                     </p>
 
                     <p>
-                        Tecnologia e Desenvolvimento por Daniel, Douglas,
-                        Jéssica e Matheus.
+                        Tecnologia e Desenvolvimento por Daniel, Douglas e
+                        Matheus.
                     </p>
                 </FooterBottom>
             </FooterBottomBg>

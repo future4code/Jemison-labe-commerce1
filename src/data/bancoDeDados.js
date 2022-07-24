@@ -14,7 +14,7 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta preta",
         nomeProduto:"Camiseta Astronauta",
         precoProduto: 109.99,
-        botaoProduto:"Adicionar ao carrinho"
+        
       },
 
       {
@@ -23,7 +23,6 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta amarela",
         nomeProduto:"Camiseta O Dia e A Hora",
         precoProduto: 79.99,
-        botaoProduto:"Adicionar ao carrinho"
       },
 
       {
@@ -32,7 +31,7 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta azul-marinho",
         nomeProduto:"Camiseta Espaço",
         precoProduto: 59.99,
-        botaoProduto:"Adicionar ao carrinho",
+        
       },
 
       {
@@ -41,7 +40,7 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta preta",
         nomeProduto:"Camiseta Eu Quero Ir Embora",
         precoProduto: 99.99,
-        botaoProduto:"Adicionar ao carrinho",
+        
       },
 
       {
@@ -50,7 +49,7 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta azul-estonada",
         nomeProduto:"Camiseta Mae Jemison",
         precoProduto: 89.99,
-        botaoProduto:"Adicionar ao carrinho",
+        
       },
 
       {
@@ -59,6 +58,6 @@ export const bancoDeDadosList=[
         descricaoProduto:"Camiseta cinza-estonada",
         nomeProduto:"Camiseta Abdução",
         precoProduto: 99.99,
-        botaoProduto:"Adicionar ao carrinho",
+        
       },
 ]

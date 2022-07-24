@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import "./App.css";
-import {bancoDeDadosList} from "./data/bancoDeDados"
+import { bancoDeDadosList } from "./data/bancoDeDados";
 
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
 import Footer from "./Components/Footer/Footer";
-
-
 
 export const Conteudo = styled.main`
     display: flex;
@@ -20,16 +17,12 @@ export const Conteudo = styled.main`
 `;
 
 function App() {
-
-    
     return (
         <div>
             <Header />
 
             <Conteudo>
-                <Main 
-                    titulo="Camisetas Espaciais"
-                />
+                <Main titulo="Camisetas Espaciais" />
             </Conteudo>
 
             <Footer />

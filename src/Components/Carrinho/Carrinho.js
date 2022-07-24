@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Checkout = styled.aside`
@@ -10,14 +10,15 @@ const Checkout = styled.aside`
 function Carrinho(props) {
     return (
         <Checkout>
-            <h2>{props.titulo}</h2>
             <div>
-                <p>1x</p>
-                <p>Produto 4</p>
-                <button>Remover</button>
+                <h2>Carrinho</h2>
+                <div>
+                    <p>1x</p>
+                    <p>Produto 4</p>
+                    <button>Remover</button>
+                </div>
+                <p>Valor total:</p>
             </div>
-
-            <p>Valor total: R$10,00</p>
         </Checkout>
     );
 }
